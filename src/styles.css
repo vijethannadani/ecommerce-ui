@@ -1,0 +1,15 @@
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./css/productss.css";
+
+div.card-header {
+ font-size: large;
+}
+
+div.card {
+  margin-top: 5px
+}
+
+.table {
+  margin-top: 10px
+}

@@ -1,0 +1,70 @@
+<div class='card'>
+  <div class='card-header'>
+  <h2>All Products</h2>
+  </div>
+  
+  <div>
+ 
+
+ 
+
+  </div>
+  <div class='card-body'>
+    
+    
+    <div class='table-responsive'>
+      <table class='table'
+      >
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>NAME</th>
+            <th>TYPE</th>
+            <th>SUBTYPE</th>
+            <th>BRAND</th>
+            <th>Prize</th>
+            <th>DATE</th>
+            <th>Delete</th>
+            <th>Update</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of prod">
+              <td >
+                  {{prod.id}}
+                     </td>
+            <td>
+         {{prod.name}}
+            </td>
+            <td>
+              {{prod.type}}
+            </td>
+            <td>
+              {{prod.subtype}}
+            </td>
+            <td>
+              {{prod.brand}}
+            </td>
+            <td>
+              {{prod.cost}}
+            </td>
+            <td >
+              {{prod.date }}
+            </td>
+            <td >
+            <a class='nav-link' [routerLink]="['/products/delete',prod.id]" > <button  class="btn btn-primary" >delete</button></a>
+          </td>
+          <td >
+            <a class='nav-link' routerLinkActive='active' [routerLink]="['/update',prod.id]"><button  class="btn btn-primary" >Edit</button></a>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

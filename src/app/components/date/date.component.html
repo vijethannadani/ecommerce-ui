@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+      <a class="btn btn=primary" routerLink="/productssearch"><button type="submit" class="btn btn-primary">Back to list</button></a>
+    </div>
+
+    
+
+ <div class='col-md-2'>Filter by date:</div>
+ <div class='col-md-2'>From date:</div>
+ <div class='col-md-4'>
+   <input type='date' [(ngModel)]='date1'
+        />
+ </div>
+ <div class='col-md-2'>To date:</div>
+ <div class='col-md-4'>
+   <input type='date' [(ngModel)]='date2'
+        />
+ </div>
+ <button type="submit"   (click)="dateba(date1,date2)" class="btn btn-primary" >serch</button>
+    <div class='card-body'>
+    <h1>  {{prodreg.type}}</h1>
+    
+    
+        <div class='table-responsive'>
+          <table class='table'
+          >
+            <thead>
+              <tr>
+               
+                <th>NAME</th>
+                <th>SUBTYPE</th>
+                <th>BRAND</th>
+                <th>Prize</th>
+                <th>DATE</th>
+    
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prodreg of prodreg">
+                <td>
+                {{prodreg.name}}
+                </td>
+               
+                <td>
+                  {{prodreg.subtype}}
+                </td>
+                <td>
+                  {{prodreg.brand}}
+                </td>
+                <td>
+                  {{prodreg.cost}}
+                </td>
+                <td >
+                  {{prodreg.date }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>

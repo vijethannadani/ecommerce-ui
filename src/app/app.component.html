@@ -1,0 +1,30 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+    <a class='navbar-brand'>{{pageTitle}}</a>
+    <ul class='nav nav-pills' >
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>
+      <li ><a class='nav-link' routerLinkActive='active' [routerLink]="['/add']">Add</a></li>
+
+      <li >
+          <div class="dropdown">
+          <button class='nav-link' routerLinkActive='active'  >Product Search</button>
+            <div  class="dropdown-content">
+              <input type="text" placeholder="Search..By filters" id="myInput">
+              <a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">FindAllProducts</a>
+              <a class='nav-link'   routerLinkActive='active'  routerLink="/view" >Id</a>
+             <a  class='nav-link'    routerLinkActive='active'routerLink="/type">Type</a>
+              
+              <a  class='nav-link'    routerLinkActive='active' routerLink="/subtype">Subtype</a>
+              <a  class='nav-link'   routerLinkActive='active' routerLink="/brand">Brand</a>
+              <a  class='nav-link'   routerLinkActive='active' routerLink="/cost">Cost</a>
+              <a  class='nav-link'  routerLinkActive='active'  routerLink="/date">Date</a>
+        
+            </div> 
+      
+          </div>
+          <li  class="navbar-header navbar-right"><a class='nav-link' routerLinkActive='active' [routerLink]="['/login']">Login</a></li>
+
+    </ul>
+</nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>

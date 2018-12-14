@@ -1,0 +1,94 @@
+<div class="container">
+    <form [formGroup]="customerform" (ngSubmit)="submit()" novalidate>
+      <div >
+       
+      </div>
+  
+              <fieldset>
+                <div class="form-group"
+                [ngClass]="{'has-error': (customerform.get('c_name').touched || 
+                                          customerform.get('c_name').dirty) &&
+                                          !customerform.get('c_name').valid }">
+                <label class="col-md-2 control-label" 
+                       for="nameId">name</label>
+
+                <div class="col-md-8">
+                    <input class="form-control" 
+                           id="nameId" 
+                           type="text" 
+                           placeholder="c_name (required)" 
+                           formControlName="c_name" />
+                    <span class="help-block" *ngIf="(customerform.get('c_name').touched || 
+                                                     customerform.get('c_name').dirty) && 
+                                                     customerform.get('c_name').errors">
+                        <span *ngIf="customerform.get('c_name').errors.required">
+                            Please enter  name.
+                        </span>
+                        <span *ngIf="customerform.get('c_name').errors.minlength">
+                            The name must me longer than 3
+                        </span>
+                    </span>
+                </div>
+            </div>
+                  <div class="form-group"
+                  [ngClass]="{'has-error': (customerform.get('c_ph').touched || 
+                                            customerform.get('c_ph').dirty) &&
+                                            !customerform.get('c_ph').valid }">
+                  <label class="col-md-2 control-label" 
+                         for="nameId">phonenumber</label>
+
+                  <div class="col-md-8">
+                      <input class="form-control" 
+                             id="nameId" 
+                             type="number" 
+                             placeholder="c_ph (required)" 
+                             formControlName="c_ph" />
+                      <span class="help-block" *ngIf="(customerform.get('c_ph').touched || 
+                                                       customerform.get('c_ph').dirty) && 
+                                                       customerform.get('c_ph').errors">
+                          <span *ngIf="customerform.get('c_ph').errors.required">
+                              Please enter phone number
+                          </span>
+                          <span *ngIf="customerform.get('c_ph').errors.minlength">
+                              The phyonenumbermust be longer than 10 characters.
+                          </span>
+                      </span>
+                  </div>
+              </div>
+
+                  <div class="form-group"
+                  [ngClass]="{'has-error': (customerform.get('c_add').touched || 
+                                            customerform.get('c_add').dirty) &&
+                                            !customerform.get('c_add').valid }">
+                  <label class="col-md-2 control-label" 
+                         for="nameId">Address</label>
+
+                  <div class="col-md-8">
+                      <input class="form-control" 
+                             id="nameId" 
+                             type="text" 
+                             placeholder="c_add (required)" 
+                             formControlName="c_add" />
+                      <span class="help-block" *ngIf="(customerform.get('c_add').touched || 
+                                                       customerform.get('c_add').dirty) && 
+                                                       customerform.get('c_add').errors">
+                          <span *ngIf="customerform.get('c_add').errors.required">
+                              Please enter c_add Product name.
+                          </span>
+                          <span *ngIf="customerform.get('c_add').errors.minlength">
+                              The Product c_add must be longer than 10 characters.
+                          </span>
+                      </span>
+                  </div>
+              </div>
+
+
+                  <button type="submit" class="btn btn-primary"   >Submit</button>
+                 
+                </fieldset>
+                <div style="padding-top:1cm">
+                    <button class="btn btn-primary" [routerLink]="['/shop']"  >shop</button></div>
+                </form>
+                
+              </div>
+              

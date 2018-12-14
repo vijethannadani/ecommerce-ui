@@ -1,0 +1,181 @@
+<div class="container">
+  <form [formGroup]="productform" (ngSubmit)="submitRegistration()" novalidate>
+    <div *ngIf="validMessage != ''">
+     
+    </div>
+
+            <fieldset>
+                <div class="form-group"
+                    [ngClass]="{'has-error': (productform.get('name').touched || 
+                                              productform.get('name').dirty) &&
+                                              !productform.get('name').valid }">
+                    <label class="col-md-2 control-label" 
+                           for="nameId">Product Name</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control" 
+                               id="nameId" 
+                               type="text" 
+                               placeholder="Name (required)" 
+                               formControlName="name" />
+                        <span class="help-block" *ngIf="(productform.get('name').touched || 
+                                                         productform.get('name').dirty) && 
+                                                         productform.get('name').errors">
+                            <span *ngIf="productform.get('name').errors.required">
+                                Please enter your Product name.
+                            </span>
+                            <span *ngIf="productform.get('name').errors.minlength">
+                                The Product name must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+    <!-- <div class="form-group">
+      <label>TYPE</label>
+      <input type="text" class="form-control" formControlName="type" required autofocus/>
+    </div> -->
+    <div class="form-group"
+    [ngClass]="{'has-error': (productform.get('type').touched || 
+                              productform.get('type').dirty) &&
+                              !productform.get('type').valid }">
+    <label class="col-md-2 control-label" 
+           for="brandId">Type</label>
+
+    <div class="col-md-8">
+        <select class="form-control" 
+               id="brandId" 
+               type="text" 
+               placeholder=" select type (required)" 
+               formControlName="type" >
+        <span class="help-block" *ngIf="(productform.get('type').touched || 
+                                         productform.get('type').dirty) && 
+                                         productform.get('type').errors">
+            <span *ngIf="productform.get('type').errors.required">
+                Please enter your type.
+            </span>
+            <span *ngIf="productform.get('type').errors.minlength">
+                The type must be longer than 3 characters.
+            </span>
+        </span>
+
+        <option value="">Please select Type</option>
+    <option *ngFor="let m of types"
+    [value]="m">
+    {{m}}
+    </option>
+  </select>
+</div> 
+</div>
+
+    <div class="form-group"
+    [ngClass]="{'has-error': (productform.get('subtype').touched || 
+                              productform.get('subtype').dirty) &&
+                              !productform.get('subtype').valid }">
+    <label class="col-md-2 control-label" 
+           >SubType</label>
+
+    <div class="col-md-8">
+        <select class="form-control" 
+               id="brandId" 
+               type="text" 
+               placeholder=" select subtype (required)" 
+               formControlName="subtype" >
+ 
+
+        <option value="">Please select a Subtype</option>
+    <option *ngFor="let m of subs"
+    [value]="m">
+    {{m}}
+    </option>
+  </select>
+</div> 
+</div>
+
+
+    <div class="form-group"
+    [ngClass]="{'has-error': (productform.get('brand').touched || 
+                              productform.get('brand').dirty) &&
+                              !productform.get('brand').valid }">
+    <label class="col-md-2 control-label" 
+           for="brandId">Brand</label>
+
+    <div class="col-md-8">
+        <select class="form-control" 
+               id="brandId" 
+               type="text" 
+               placeholder="brand (required)" 
+               formControlName="brand" >
+       
+
+        <option value="">Please select a Brand</option>
+    <option *ngFor="let m of models"
+    [value]="m">
+    {{m}}
+    </option>
+  </select>
+</div> 
+</div>
+
+
+
+
+
+    <div class="form-group"
+    [ngClass]="{'has-error': (productform.get('cost').touched || 
+                              productform.get('cost').dirty) &&
+                              !productform.get('cost').valid }">
+    <label class="col-md-2 control-label" 
+           for="costId">Prize</label>
+
+    <div class="col-md-8">
+        <input class="form-control" 
+               id="costId" 
+               type="text" 
+               placeholder="prize (required)" 
+               formControlName="cost" />
+        <span class="help-block" *ngIf="(productform.get('cost').touched || 
+                                         productform.get('cost').dirty) && 
+                                         productform.get('cost').errors">
+            <span *ngIf="productform.get('cost').errors.required">
+                Please enter your prize.
+            </span>
+            
+        </span>
+    </div>
+</div>
+
+ 
+      <div class="form-group"
+      [ngClass]="{'has-error': (productform.get('date').touched || 
+                                productform.get('date').dirty) &&
+                                !productform.get('date').valid }">
+      <label class="col-md-2 control-label" 
+             for="dateId">Date</label>
+
+      <div class="col-md-8">
+          <input class="form-control" 
+                 id="dateId" 
+                 type="date" 
+                 placeholder="date(required)" 
+                 formControlName="date" />
+          <span class="help-block" *ngIf="(productform.get('date').touched || 
+                                           productform.get('date').dirty) && 
+                                           productform.get('date').errors">
+              <span *ngIf="productform.get('date').errors.required">
+                  Please enter date.
+              </span>
+            
+          </span>
+      </div>
+  </div>
+
+      
+
+
+
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </fieldset>
+  </form>
+</div>

@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+      <a class="btn btn=primary" routerLink="/productssearch"><button type="submit" class="btn btn-primary">Back to list</button></a>
+    </div>
+  
+      <div class="dropdown">
+          <button class="dropbtn">Select Brand</button>
+            <div  class="dropdown-content">
+             
+              <a (click)="getprodreg('samsung')">samsung</a>
+              <a (click)="getprodreg('Redmi')">Redmi</a>
+              <a (click)="getprodreg('puma')">puma</a>
+              <a (click)="getprodreg('fastrack')">fastrack</a>
+              <a (click)="getprodreg('wildcraft')">wildcraft</a>
+              <a (click)="getprodreg('titan')">titan</a>
+              <a (click)="getprodreg('Dell')">Dell</a>
+              <a (click)="getprodreg('HP')">HP</a>
+              <a (click)="getprodreg('Apple')">Apple</a>
+              <a (click)="getprodreg('Oppo')">Oppo</a>
+              <a (click)="getprodreg('Gionee')">Gionee</a>
+              <a (click)="getprodreg('puma')">puma</a>
+     
+            
+
+
+        
+            </div>
+          </div>
+    
+    <div class='card-body'>
+        
+    
+        <div class='table-responsive'>
+          <table class='table'
+          >
+            <thead>
+              <tr>
+               
+                <th>NAME</th>
+                <th>SUBTYPE</th>
+                <th>BRAND</th>
+                <th>Prize</th>
+                <th>DATE</th>
+    
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prodreg of prodreg">
+                <td>
+                {{prodreg.name}}
+                </td>
+               
+                <td>
+                  {{prodreg.subtype}}
+                </td>
+                <td>
+                  {{prodreg.brand}}
+                </td>
+                <td>
+                  {{prodreg.cost}}
+                </td>
+                <td >
+                  {{prodreg.date }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
